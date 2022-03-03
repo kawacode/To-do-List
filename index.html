@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        body {
+            background: linear-gradient(rgb(22, 37, 63) 0%, rgb(18, 136, 63) 100%);
+        }
+
+        .app {
+            background: linear-gradient(rgb(55, 172, 55) 0%, rgb(19, 55, 117) 100%);
+            width: 500px;
+            height: 500px;
+            margin: 65px auto;
+            border-radius: 20px;
+            box-shadow: 0 0 10px 2px #888;
+        }
+
+        .addsection {
+            width: 100%;
+            height: 150px;
+        }
+
+        .addtext {
+            display: flex;
+            position: absolute;
+            color: white;
+            background-color: rgb(10, 89, 134);
+            font-size: 20px;
+            width: 360px;
+            height: 30px;
+            margin-top: 20px;
+            margin-left: 15px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .addbutton {
+            font-size: 20px;
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            margin-top: 20px;
+            margin-left: 385px;
+            border-radius: 10px;
+            border: none;
+            color: black;
+            opacity: 0.5;
+            transition: all 500ms ease;
+        }
+
+        .addbutton.active {
+            background: rgb(65, 252, 127);
+        }
+
+        .addbutton:hover.active {
+            opacity: 1;
+            transition: all 500ms ease;
+            box-shadow: 0px 0px 20px 2px rgb(36, 46, 48);
+            background: rgb(0, 175, 58);
+        }
+
+        .clearbutton {
+            font-size: 20px;
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            margin-top: 20px;
+            margin-left: 442px;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            background: rgb(226, 66, 66);
+        }
+
+        .clearbutton:hover {
+            opacity: 1;
+            transition: all 500ms ease;
+            box-shadow: 0px 0px 20px 2px rgb(36, 46, 48);
+            background: linear-gradient(rgb(255, 0, 0) 0%, rgb(110, 18, 18) 100%);
+        }
+
+        .itemsection {
+            margin-top: -70px;
+            height: 370px;
+            padding: 15px;
+            overflow: auto;
+        }
+
+        .item {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 10px;
+            margin-top: 10px;
+            list-style-type: none;
+            font-size: 20px;
+            border-radius: 10px;
+            color: rgb(255, 255, 255);
+            background: linear-gradient(rgb(0, 216, 216) 0%, rgb(42, 40, 133) 100%);
+        }
+
+        .item:hover {
+            overflow: visible;
+        }
+
+        .deletebutton {
+            height: 30px;
+            width: 40px;
+            font-size: 20px;
+            margin-left: 55px;
+            border: none;
+            background: red;
+            border-radius: 10px;
+            opacity: 0.7;
+            transition: all 500ms ease;
+        }
+
+        .deletebutton:hover {
+            opacity: 1;
+            transition: all 500ms ease;
+            box-shadow: 0px 0px 20px 2px white;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <div id="app" class="app">
+        <div id="addsection" class="addsection">
+            <input maxlength="35" placeholder=" ..." class="addtext" id="addtext" type="text">
+            <button disabled="" id="addbutton" class="addbutton">
+                <ion-icon name="add-outline"></ion-icon>
+            </button>
+            <button id="clearbutton" class="clearbutton">
+                <ion-icon name="trash-bin-outline"></ion-icon>
+            </button>
+        </div>
+        <div id="itemsection" class="itemsection">
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
